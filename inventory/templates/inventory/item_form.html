@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<br>
+	<a href="{% url 'dashboard' %}" class="btn btn-outline-info my-3 mx-4">Indietro</a>
+
+	<div class="row">
+		<div class="coll-11 col-md-4 mx-auto mt-5">
+			<h1>Aggiungi a Inventario</h1>
+
+			<form method="post">
+				{% csrf_token %}
+				{{ form|crispy }}
+
+				<div class="mt-3">
+					<button class="btn btn-primary">Aggiungi Item</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock content %}
